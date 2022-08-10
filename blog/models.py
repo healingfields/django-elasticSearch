@@ -40,3 +40,13 @@ class Article(models.Model):
 
     def __str__(self):
         return f'{self.author}: {self.title} ({self.created_at.date()})'
+
+    def type_to_string(self):
+        if self.type == 'UN':
+            return 'Unspecified'
+        elif self.type == 'TU':
+            return 'Tutorial'
+        elif self.type == 'RS':
+            return 'Research'
+        elif self.type == 'RW':
+            return 'Review'
